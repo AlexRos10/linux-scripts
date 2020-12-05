@@ -1,11 +1,13 @@
 #!/bin/bash
 read -p ">>> remove/create/move/copy: " input
 
+#To check if the input is empty
 if [ -z "$input" ];
 then
    echo "command error: any option"
    exit
 
+#Bulk file delete feature
 elif [ $input = "remove" ] || [ $input = "rm"  ]; 
 then
    while [ false ]
@@ -19,6 +21,7 @@ then
       fi
    done
 
+#Bulk file directory move feature
 elif [ $input = "move"  ] || [ $input = "mv"  ]; 
 then
    while [ false ]
@@ -33,6 +36,7 @@ then
       fi
    done
 
+#Bulk file copy function to another directory
 elif [ $input = "copy" ] || [ $input = "cp" ];
 then
    while [ false ]
@@ -47,6 +51,7 @@ then
       fi
    done
 
+#Bulk file create feature
 elif [ $input = "create" ] || [ $input = "touch" ];
 then
    while [ false ]
