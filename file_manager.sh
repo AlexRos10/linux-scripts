@@ -16,10 +16,9 @@ then
          break
       elif [ $file = "all" ] || [ $file = "*" ]
       then
-         rm -f *
-         rmdir *
+         rm -rf *
       else
-         rm $file
+         rm -rf $file
       fi
    done
 
