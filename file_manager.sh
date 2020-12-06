@@ -1,33 +1,34 @@
 #!/bin/bash
 read -p ">>> remove/create/move/copy: " input
 
-#To check if the input is empty
 if [ -z "$input" ];
 then
    echo "command error: any option"
    exit
 
-#Bulk file delete feature
-elif [ $input = "remove" ] || [ $input = "rm"  ]; 
+elif [ $input = "remove" ] || [ $input = "rm"  ]
 then
    while [ false ]
    do
       read -p ">> file name: " file
-      if [ $file = "break"  ];
+      if [ $file = "break"  ]
       then
          break
+      elif [ $file = "all" ] || [ $file = "*" ]
+      then
+         rm -f *
+         rmdir *
       else
          rm $file
       fi
    done
 
-#Bulk file directory move feature
-elif [ $input = "move"  ] || [ $input = "mv"  ]; 
+elif [ $input = "move"  ] || [ $input = "mv"  ]
 then
    while [ false ]
    do
       read -p ">> file name: " file
-      if [ $file = "break" ];
+      if [ $file = "break" ]
       then
          break
       else
@@ -36,13 +37,12 @@ then
       fi
    done
 
-#Bulk file copy function to another directory
-elif [ $input = "copy" ] || [ $input = "cp" ];
+elif [ $input = "copy" ] || [ $input = "cp" ]
 then
    while [ false ]
    do
       read -p ">> file name: " file
-      if [];
+      if [ $file = "break" ]
       then
          break
       else
@@ -51,13 +51,12 @@ then
       fi
    done
 
-#Bulk file create feature
-elif [ $input = "create" ] || [ $input = "touch" ];
+elif [ $input = "create" ] || [ $input = "touch" ]
 then
    while [ false ]
    do
-      read -p ">> file name: " file
-      if [ $file = "break" ];
+      :read -p ">> file name: " file
+      if [ $file = "break" ]
       then
          break
       else
