@@ -1,4 +1,5 @@
 #!/bin/bashc
+#An script bash to compile a C file, run it, and delete the file.out
 c=".c"
 out=".out"
 read -p  "C File to compile: " file
